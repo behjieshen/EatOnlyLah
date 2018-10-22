@@ -12,13 +12,23 @@ body
     .bmr-column
       form.bmr-form(method="post" action="/")
         .bmr-form-row
-          .bmr-form-group
+          .bmr-form-group.have-unit
             .bmr-form-group-main
               label WEIGHT
               input(type="number" name="weight" placeholder="12")
             span.bmr-form-group-label KG
-          .bmr-form-group
+          .bmr-form-group.have-unit
             .bmr-form-group-main
               label HEIGHT
               input(type="number" name="weight" placeholder="12")
             span.bmr-form-group-label cm
+        .bmr-form-group
+          label GENDER
+          .bmr-options-row
+            .bmr-option-button.active
+              span Male
+              input(type="radio" value="male")
+            .bmr-option-button
+              span Female
+              input(type="radio" value="female")
+          
