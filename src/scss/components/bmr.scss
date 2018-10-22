@@ -1,0 +1,66 @@
+.bmr-container {
+  display: flex;
+}
+
+.bmr-column {
+  &:nth-child(1) {
+    background: linear-gradient($js-green1, $js-green2);
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      color: white;
+      font-family: 'Open Sans';
+      font-weight: bold;
+      font-size: 22px;
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 40px;
+    }
+
+    img {
+      width: 60%;
+      margin: 0 auto;
+    }
+  }
+
+  &:nth-child(2) {
+    width: 65%;
+  }
+}
+
+.bmr-form-group {
+  display: flex;
+  align-items: center;
+  label {
+    font-family: 'Open Sans';
+    font-weight: 500;
+    text-transform: uppercase;
+    display: block;
+    color: #ccc;
+    font-size: 12px;
+  }
+
+  input {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    padding: 10px 0;
+    font-size: 16px;
+    color: black;
+  }
+}
+
+.bmr-form-group-label {
+  display: block;
+  font-family: 'Open Sans';
+  font-weight: 500;
+  font-family: $js-green1;
+  margin-left: 20px;
+}

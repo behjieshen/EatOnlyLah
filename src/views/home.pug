@@ -1,6 +1,8 @@
 doctype html
 head
   meta(charset="utf-8")
+  link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet")
+  link(rel="stylesheet", href="assets/stylesheets/main.css")
   title Calorie Intake Calculator
 body
   .bmr-container
@@ -8,3 +10,15 @@ body
       h1 Get your recommended calorie intake now!
       img(src="assets/images/hero.svg")
     .bmr-column
+      form.bmr-form(method="post" action="/")
+        .bmr-form-row
+          .bmr-form-group
+            .bmr-form-group-main
+              label WEIGHT
+              input(type="number" name="weight" placeholder="12")
+            span.bmr-form-group-label KG
+          .bmr-form-group
+            .bmr-form-group-main
+              label HEIGHT
+              input(type="number" name="weight" placeholder="12")
+            span.bmr-form-group-label cm

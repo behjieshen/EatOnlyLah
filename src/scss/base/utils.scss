@@ -1,0 +1,32 @@
+input:active,
+input:focus {
+  outline-color: transparent;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+section {
+}
+
+ul {
+  padding: 0;
+}
+
+@media screen and (min-width: 993px) {
+  .mobile {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  section {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .desktop {
+    display: none !important;
+  }
+}

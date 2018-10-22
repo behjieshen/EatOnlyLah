@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="assets/stylesheets/main.css">
   <title>Calorie Intake Calculator</title>
 </head>
 <body>
@@ -8,6 +10,23 @@
     <div class="bmr-column">
       <h1>Get your recommended calorie intake now!</h1><img src="assets/images/hero.svg">
     </div>
-    <div class="bmr-column"></div>
+    <div class="bmr-column">
+      <form class="bmr-form" method="post" action="/">
+        <div class="bmr-form-row">
+          <div class="bmr-form-group">
+            <div class="bmr-form-group-main">
+              <label>WEIGHT</label>
+              <input type="number" name="weight" placeholder="12">
+            </div><span class="bmr-form-group-label">KG</span>
+          </div>
+          <div class="bmr-form-group">
+            <div class="bmr-form-group-main">
+              <label>HEIGHT</label>
+              <input type="number" name="weight" placeholder="12">
+            </div><span class="bmr-form-group-label">cm</span>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </body>
