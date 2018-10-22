@@ -12,16 +12,14 @@ body
     .bmr-column
       form.bmr-form(method="post" action="/")
         .bmr-form-row
-          .bmr-form-group.have-unit
+          .bmr-form-group(style="flex: 2")
             .bmr-form-group-main
-              label WEIGHT
-              input(type="number" name="weight" placeholder="12")
-            span.bmr-form-group-label KG
-          .bmr-form-group.have-unit
+              label Email
+              input(type="email" name="email")
+          .bmr-form-group(style="flex: 1")
             .bmr-form-group-main
-              label HEIGHT
-              input(type="number" name="weight" placeholder="12")
-            span.bmr-form-group-label cm
+              label Age
+              input(type="number" name="age")
         .bmr-form-group
           label GENDER
           .bmr-options-row
@@ -31,4 +29,57 @@ body
             .bmr-option-button
               span Female
               input(type="radio" value="female")
+        .bmr-form-row
+          .bmr-form-group.have-unit
+            .bmr-form-group-main
+              label WEIGHT
+              input(type="number" name="weight")
+            span.bmr-form-group-label KG
+          .bmr-form-group.have-unit
+            .bmr-form-group-main
+              label HEIGHT
+              input(type="number" name="weight")
+            span.bmr-form-group-label cm
+        .bmr-form-group
+          label Goal
+          .bmr-options-row
+            .bmr-option-button.active
+              span Build Muscle
+              input(type="radio" value="build-muscle")
+            .bmr-option-button
+              span Lose Fat
+              input(type="radio" value="lose-fat")
+            .bmr-option-button
+              span Maintainence
+              input(type="radio" value="maintainence")
+        .bmr-form-group
+          .bmr-label-row
+            label Activity Level
+            span What is this?
+          .bmr-options-row
+            .bmr-option-button.active
+              span 
+                | Lightly 
+                br
+                | Active
+              input(type="radio" value="lightly-active")
+            .bmr-option-button
+              span
+                | Moderately 
+                br
+                | Active
+              input(type="radio" value="moderately-active")
+            .bmr-option-button
+              span
+                | Very
+                br
+                | Active
+              input(type="radio" value="very-active")
+            .bmr-option-button
+              span
+                | Extra
+                br
+                | Active
+              input(type="radio" value="extra-active")
+        input.bmr-submit(type="submit" value="Submit")
           

@@ -13,17 +13,17 @@
     <div class="bmr-column">
       <form class="bmr-form" method="post" action="/">
         <div class="bmr-form-row">
-          <div class="bmr-form-group have-unit">
+          <div class="bmr-form-group" style="flex: 2">
             <div class="bmr-form-group-main">
-              <label>WEIGHT</label>
-              <input type="number" name="weight" placeholder="12">
-            </div><span class="bmr-form-group-label">KG</span>
+              <label>Email</label>
+              <input type="email" name="email">
+            </div>
           </div>
-          <div class="bmr-form-group have-unit">
+          <div class="bmr-form-group" style="flex: 1">
             <div class="bmr-form-group-main">
-              <label>HEIGHT</label>
-              <input type="number" name="weight" placeholder="12">
-            </div><span class="bmr-form-group-label">cm</span>
+              <label>Age</label>
+              <input type="number" name="age">
+            </div>
           </div>
         </div>
         <div class="bmr-form-group">
@@ -37,6 +37,55 @@
             </div>
           </div>
         </div>
+        <div class="bmr-form-row">
+          <div class="bmr-form-group have-unit">
+            <div class="bmr-form-group-main">
+              <label>WEIGHT</label>
+              <input type="number" name="weight">
+            </div><span class="bmr-form-group-label">KG</span>
+          </div>
+          <div class="bmr-form-group have-unit">
+            <div class="bmr-form-group-main">
+              <label>HEIGHT</label>
+              <input type="number" name="weight">
+            </div><span class="bmr-form-group-label">cm</span>
+          </div>
+        </div>
+        <div class="bmr-form-group">
+          <label>Goal</label>
+          <div class="bmr-options-row">
+            <div class="bmr-option-button active"><span>Build Muscle</span>
+              <input type="radio" value="build-muscle">
+            </div>
+            <div class="bmr-option-button"><span>Lose Fat</span>
+              <input type="radio" value="lose-fat">
+            </div>
+            <div class="bmr-option-button"><span>Maintainence</span>
+              <input type="radio" value="maintainence">
+            </div>
+          </div>
+        </div>
+        <div class="bmr-form-group">
+          <div class="bmr-label-row">
+            <label>Activity Level</label><span>What is this?</span>
+          </div>
+          <div class="bmr-options-row">
+            <div class="bmr-option-button active"><span>
+                 Lightly <br>Active</span>
+              <input type="radio" value="lightly-active">
+            </div>
+            <div class="bmr-option-button"><span>Moderately <br>Active</span>
+              <input type="radio" value="moderately-active">
+            </div>
+            <div class="bmr-option-button"><span>Very<br>Active</span>
+              <input type="radio" value="very-active">
+            </div>
+            <div class="bmr-option-button"><span>Extra<br>Active</span>
+              <input type="radio" value="extra-active">
+            </div>
+          </div>
+        </div>
+        <input class="bmr-submit" type="submit" value="Submit">
       </form>
     </div>
   </div>
