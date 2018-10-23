@@ -163,6 +163,12 @@
     top: 20px;
     font-size: 14px;
     font-family: 'Open Sans';
+    cursor: pointer;
+    transition: 0.3s all;
+
+    &:hover {
+      background: color-opacity($js-green1, 0.8);
+    }
   }
 }
 
