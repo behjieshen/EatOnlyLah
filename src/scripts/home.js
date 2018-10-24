@@ -51,7 +51,8 @@ $(document).ready(function() {
     $('.bmr-results-content span').click(function() {
       $('form')[0].reset();
       $('.bmr-form').css('display', 'block');
-      $('.bmr-results').hide();
+      $('.bmr-results').css('display', 'none');
+      $('.bmr-results-content').css('display', 'none');
     });
   });
 
@@ -78,12 +79,15 @@ $(document).ready(function() {
   }
 
   function transitionToResults() {
-    $('.bmr-form').hide();
+    console.log('hello');
+    $('.bmr-form').css('display', 'none');
     $('.bmr-results').css('display', 'block');
+    $('.spinner').css('display', 'block');
+    $('.bmr-results-content').css('display', 'none');
 
     setTimeout(function() {
       $('.bmr-results-content').css('display', 'block');
-      $('.spinner').hide();
+      $('.spinner').css('display', 'none');
     }, 2000);
   }
 

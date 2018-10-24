@@ -18,7 +18,15 @@
       color: white;
       font-family: 'Open Sans';
       font-weight: bold;
-      font-size: 22px;
+      font-size: 42px;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: white;
+      font-family: 'Open Sans';
+      font-weight: 400;
+      font-size: 18px;
       width: 80%;
       margin: 0 auto;
       margin-bottom: 40px;
@@ -288,7 +296,6 @@ svg {
 
 .bmr-option-button {
   margin-top: 10px;
-  flex: 1;
   display: block;
 
   span {
@@ -316,10 +323,28 @@ svg {
   }
 }
 
+@media screen and (min-width: 993px) {
+  .bmr-option-button {
+    flex: 1;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .bmr-container {
     display: block;
     flex-direction: column;
+  }
+
+  .bmr-option-button {
+    width: 100%;
+  }
+
+  .bmr-column:nth-child(1) img {
+    max-width: 300px;
+  }
+
+  .bmr-options-row {
+    flex-wrap: wrap;
   }
 
   .bmr-column {
@@ -328,6 +353,7 @@ svg {
       width: 100%;
       margin: 0;
       position: relative;
+      padding: 55px 0;
     }
 
     &:nth-child(2) {
