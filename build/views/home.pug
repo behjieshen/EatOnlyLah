@@ -1,0 +1,122 @@
+doctype html
+head
+  meta(http-equiv="Content-Type" content="text/html" charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  meta(name='theme-color', content='#76b852')
+  meta(name="keywords" content="")
+  meta(name="author" content="Jason Beh")
+  meta(name='description', content='')
+
+  link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet")
+  link(rel="stylesheet", href="assets/stylesheets/main.css")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+  script(src="assets/scripts/app.js")
+    
+  title Calorie Intake Calculator
+body
+  .bmr-modal
+    .bmr-modal-content
+      span.bmr-modal-close &times;
+      h5 Activity Level
+      p Lightly Active - Moderate Exercise but sedentary job
+      p Moderately Active - Intense Exercise but sedentary job
+      p Very Active - Moderate Exercise and active job
+      p Extra Active - Intense Exercise and active job
+  .bmr-container
+    .bmr-column
+      h1 Eat Only Lah!
+      h2 Calculate your daily calorie intake to hit your goal
+      img(src="assets/images/hero.svg")
+    .bmr-column
+      .bmr-results
+        .bmr-results-content
+          h5 Your recommended calorie intake:
+          h6
+          span Restart Calculator
+        .bmr-loading
+          .spinner
+            svg(viewbox='0 0 66 66', xmlns='http://www.w3.org/2000/svg')
+              circle.length(fill='none', stroke-width='8', stroke-linecap='round', cx='33', cy='33', r='28')
+            svg(viewbox='0 0 66 66', xmlns='http://www.w3.org/2000/svg')
+              circle(fill='none', stroke-width='8', stroke-linecap='round', cx='33', cy='33', r='28')
+            svg(viewbox='0 0 66 66', xmlns='http://www.w3.org/2000/svg')
+              circle(fill='none', stroke-width='8', stroke-linecap='round', cx='33', cy='33', r='28')
+            svg(viewbox='0 0 66 66', xmlns='http://www.w3.org/2000/svg')
+              circle(fill='none', stroke-width='8', stroke-linecap='round', cx='33', cy='33', r='28')
+
+      form.bmr-form(method="post" action="/")
+        .bmr-form-row
+          .bmr-form-group(style="flex: 2")
+            .bmr-form-group-main
+              label Email*
+              input(type="email" name="email" required)
+          .bmr-form-group(style="flex: 1")
+            .bmr-form-group-main
+              label Age*
+              input(type="number" name="age" required)
+        .bmr-form-group
+          label GENDER*
+          .bmr-options-row
+            select(name="gender" required)
+              option(value="male" selected)
+              option(value="female")
+            .bmr-option-button.active
+              span Male
+            .bmr-option-button
+              span Female
+        .bmr-form-row
+          .bmr-form-group.have-unit
+            .bmr-form-group-main
+              label WEIGHT*
+              input(type="number" name="weight" required)
+            span.bmr-form-group-label KG
+          .bmr-form-group.have-unit
+            .bmr-form-group-main
+              label HEIGHT*
+              input(type="number" name="height" required)
+            span.bmr-form-group-label cm
+        .bmr-form-group
+          label Goal*
+          .bmr-options-row
+            select(name="goal" required)
+              option(value="build-muscle" selected)
+              option(value="lose-fat")
+              option(value="tone")
+            .bmr-option-button.active
+              span Build Muscle
+            .bmr-option-button
+              span Lose Fat
+            .bmr-option-button
+              span Tone
+        .bmr-form-group
+          .bmr-label-row
+            label Activity Level*
+            span.bmr-modal-trigger What is this?
+          .bmr-options-row
+            select(name="activity" required)
+              option(value="lightly-active" selected)
+              option(value="moderately-active")
+              option(value="very-active")
+              option(value="extra-active")
+            .bmr-option-button.active
+              span Lightly 
+                br
+                |Active
+            .bmr-option-button
+              span
+                | Moderately 
+                br
+                | Active
+            .bmr-option-button
+              span
+                | Very 
+                br
+                | Active
+            .bmr-option-button
+              span
+                | Extra 
+                br
+                | Active
+        input.bmr-submit(type="submit" value="Submit")
+          
