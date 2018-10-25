@@ -143,12 +143,6 @@
 }
 
 .bmr-results-content {
-  display: none;
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  transform: translate(-50%, -50%);
-
   h5 {
     font-family: 'Open Sans';
     font-size: 20px;
@@ -327,12 +321,28 @@ svg {
   .bmr-option-button {
     flex: 1;
   }
+
+  .bmr-results-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 @media screen and (max-width: 992px) {
   .bmr-container {
     display: block;
     flex-direction: column;
+  }
+
+  .bmr-form-group:first-child {
+    margin-right: 30px;
+  }
+
+  .bmr-loading {
+    padding: 100px 0;
   }
 
   .bmr-option-button {
@@ -345,6 +355,21 @@ svg {
 
   .bmr-options-row {
     flex-wrap: wrap;
+  }
+
+  .bmr-results {
+    height: 100%;
+    padding-bottom: 70px;
+  }
+
+  .bmr-form {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .spinner {
+    top: 30%;
+    left: calc((100% - 66px) / 2);
   }
 
   .bmr-column {
@@ -361,7 +386,7 @@ svg {
       padding-left: 0;
       padding-right: 0;
       margin-left: 0;
-      width: 80%;
+      width: 90%;
       margin: 0 auto;
     }
   }

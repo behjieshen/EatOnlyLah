@@ -26,7 +26,7 @@ gulp.task('css', function() {
       .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
       .pipe(autoprefixer('last 2 versions'))
       .pipe(concat('main.css'))
-      .pipe(gulp.dest('build/www/assets/stylesheets'));
+      .pipe(gulp.dest('build/assets/stylesheets'));
   });
 });
 
@@ -36,7 +36,7 @@ gulp.task('js', function() {
       .src('src/scripts/**/*')
       .pipe(concat('app.js'))
       .pipe(uglify())
-      .pipe(gulp.dest('build/www/assets/scripts'));
+      .pipe(gulp.dest('build/assets/scripts'));
   });
 });
 
@@ -46,4 +46,4 @@ gulp.task('public', () => {
   });
 });
 
-gulp.task('default', ['html', 'css', 'js']);
+gulp.task('default', ['css', 'js']);

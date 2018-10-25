@@ -6,6 +6,7 @@ $(document).ready(function() {
   $('form').submit(function(e) {
     e.preventDefault();
     var data = getFormData($(this));
+    $.post('/', $(this).serialize());
     var bmr;
     if (data.gender == 'male') {
       bmr = 66 + 13.75 * data.weight + 5 * data.height - 6.8 * data.age;
@@ -36,7 +37,7 @@ $(document).ready(function() {
       case 'lose-fat':
         bmr -= 200;
         break;
-      case 'maintainence':
+      case 'tone':
         bmr -= 100;
         break;
       default:
@@ -79,7 +80,6 @@ $(document).ready(function() {
   }
 
   function transitionToResults() {
-    console.log('hello');
     $('.bmr-form').css('display', 'none');
     $('.bmr-results').css('display', 'block');
     $('.spinner').css('display', 'block');
