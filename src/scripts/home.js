@@ -2,10 +2,24 @@ $(document).ready(function() {
   modalController();
   optionButtonController();
 
+  var responseData;
+
+  $('.subscribe-form').submit(function(e) {
+    e.preventDefault();
+    $.post('/subscribe', $(this).serialize());
+    $('.bmr-results-content p').text(
+      'Congrats! You are now subscribed to our fitness tips!'
+    );
+    $('.subscribe-form input').attr('disabled', 'true');
+    $('.subscribe-form')[0].reset();
+  });
+
   // when form is submit
-  $('form').submit(function(e) {
+  $('.bmr-form').submit(function(e) {
     e.preventDefault();
     var data = getFormData($(this));
+    responseData = $(this).serialize();
+    $('.others').attr('value', responseData);
     $.post('/', $(this).serialize());
     var bmr;
     if (data.gender == 'male') {
@@ -50,10 +64,14 @@ $(document).ready(function() {
     transitionToResults();
 
     $('.bmr-results-content span').click(function() {
-      $('form')[0].reset();
+      $('.bmr-form')[0].reset();
       $('.bmr-form').css('display', 'block');
       $('.bmr-results').css('display', 'none');
       $('.bmr-results-content').css('display', 'none');
+      $('.bmr-results-content p').text(
+        'Subscribe if you want fitness tips without searching the whole Internet.'
+      );
+      $('.subscribe-form input').attr('disabled', 'false');
     });
   });
 
@@ -82,12 +100,12 @@ $(document).ready(function() {
   function transitionToResults() {
     $('.bmr-form').css('display', 'none');
     $('.bmr-results').css('display', 'block');
-    $('.spinner').css('display', 'block');
+    $('.spinner, .bmr-loading').css('display', 'block');
     $('.bmr-results-content').css('display', 'none');
 
     setTimeout(function() {
       $('.bmr-results-content').css('display', 'block');
-      $('.spinner').css('display', 'none');
+      $('.spinner, .bmr-loading').css('display', 'none');
     }, 2000);
   }
 

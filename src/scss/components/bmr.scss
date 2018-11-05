@@ -157,7 +157,7 @@
   }
 
   span {
-    padding: 15px 33px;
+    padding: 12px 26px;
     background: $js-green1;
     border-radius: 100px;
     color: white;
@@ -170,6 +170,40 @@
 
     &:hover {
       background: color-opacity($js-green1, 0.8);
+    }
+  }
+
+  p {
+    font-family: 'Open Sans';
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  form {
+    margin-top: 74px;
+    font-size: 16px;
+    font-family: 'Open Sans';
+    display: flex;
+
+    input[type='email'] {
+      border: 1px solid $js-green1;
+      padding: 14px 12px;
+      padding-right: 60px;
+      flex: 3;
+    }
+
+    input[type='submit'] {
+      background: $js-green1;
+      border: 1px solid $js-green1;
+      color: white;
+      padding: 14px 30px;
+      flex: 1;
+      cursor: pointer;
+      transition: 0.3s all;
+
+      &:hover {
+        background: color-opacity($js-green1, 0.8);
+      }
     }
   }
 }
@@ -326,8 +360,12 @@ svg {
     display: none;
     position: absolute;
     left: 50%;
-    top: 40%;
+    top: 48%;
     transform: translate(-50%, -50%);
+  }
+
+  #age {
+    margin-top: 14px;
   }
 }
 
@@ -339,6 +377,22 @@ svg {
 
   .bmr-form-group:first-child {
     margin-right: 30px;
+  }
+
+  .bmr-form-row:nth-child(1) {
+    flex-direction: column;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+  }
+
+  .bmr-results-content {
+    form {
+      input[type='email'] {
+        margin-bottom: 10px;
+      }
+    }
   }
 
   .bmr-loading {

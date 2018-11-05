@@ -17,10 +17,9 @@ prompt.get(FIELDS, (err, config) => {
 
   // Create the "visits" table
   knex.schema
-    .createTable('data', table => {
+    .createTable('withoutEmail', table => {
       table.increments();
       table.timestamp('timestamp');
-      table.string('email');
       table.integer('age');
       table.string('gender');
       table.integer('weight_kg');

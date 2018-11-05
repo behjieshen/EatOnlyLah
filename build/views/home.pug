@@ -3,7 +3,7 @@ head
   meta(http-equiv="Content-Type" content="text/html" charset='utf-8')
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   meta(http-equiv="X-UA-Compatible", content="IE=edge")
-  meta(name='theme-color', content='#76b852')
+  meta(name='theme-color', content='#18d665')
   meta(name="keywords" content="")
   meta(name="author" content="Jason Beh")
   meta(name='description', content='')
@@ -34,6 +34,12 @@ body
           h5 Your recommended calorie intake:
           h6
           span Restart Calculator
+          form.subscribe-form(action="/subscribe" method="post")
+            input(type="email" name="email" placeholder="Email Address" required)
+            input.others(type="hidden" name="others" required)
+            input(type="submit" value="Subscribe")
+          p Subscribe if you want fitness tips without searching the whole Internet.
+            
         .bmr-loading
           .spinner
             svg(viewbox='0 0 66 66', xmlns='http://www.w3.org/2000/svg')
@@ -47,24 +53,34 @@ body
 
       form.bmr-form(method="post" action="/")
         .bmr-form-row
-          .bmr-form-group(style="flex: 2")
-            .bmr-form-group-main
-              label Email*
-              input(type="email" name="email" required)
           .bmr-form-group(style="flex: 1")
             .bmr-form-group-main
               label Age*
-              input(type="number" name="age" required)
-        .bmr-form-group
-          label GENDER*
-          .bmr-options-row
-            select(name="gender" required)
-              option(value="male" selected)
-              option(value="female")
-            .bmr-option-button.active
-              span Male
-            .bmr-option-button
-              span Female
+              input#age(type="number" name="age" required)
+          .bmr-form-group(style="flex: 2")
+            .bmr-form-group-main
+              label GENDER*
+              .bmr-options-row
+                select(name="gender" required)
+                  option(value="male" selected)
+                  option(value="female")
+                .bmr-option-button.active
+                  span Male
+                .bmr-option-button
+                  span Female
+              //- label Email*
+              //- input(type="email" name="email" required)
+
+        //- .bmr-form-group
+        //-   label GENDER*
+        //-   .bmr-options-row
+        //-     select(name="gender" required)
+        //-       option(value="male" selected)
+        //-       option(value="female")
+        //-     .bmr-option-button.active
+        //-       span Male
+        //-     .bmr-option-button
+        //-       span Female
         .bmr-form-row
           .bmr-form-group.have-unit
             .bmr-form-group-main

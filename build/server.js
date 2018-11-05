@@ -25,7 +25,10 @@ function connect() {
     database: process.env.SQL_DATABASE
   };
 
-  if (process.env.INSTANCE_CONNECTION_NAME && process.env.NODE_ENV === 'production') {
+  if (
+    process.env.INSTANCE_CONNECTION_NAME &&
+    process.env.NODE_ENV === 'production'
+  ) {
     config.socketPath = `/cloudsql/${process.env.INSTANCE_CONNECTION_NAME}`;
   }
 
@@ -45,27 +48,55 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req, res) {
-  knex('data')
-    .insert({
-      timestamp: new Date(),
-      email: req.body.email,
-      age: req.body.age,
-      gender: req.body.gender,
-      weight_kg: req.body.weight,
-      height_cm: req.body.height,
-      goal: req.body.goal,
-      activity_level: req.body.activity
-    })
-    .then(function() {
-      console.log('Successfully added new insert');
-      return knex.destroy();
-    })
-    .catch(function(err) {
-      console.error(`Failed to add new insert`, err);
-      if (knex) {
-        knex.destroy();
-      }
-    });
+  return 'hello';
+  // knex('withoutEmail')
+  //   .insert({
+  //     timestamp: new Date(),
+  //     age: req.body.age,
+  //     gender: req.body.gender,
+  //     weight_kg: req.body.weight,
+  //     height_cm: req.body.height,
+  //     goal: req.body.goal,
+  //     activity_level: req.body.activity
+  //   })
+  //   .then(function() {
+  //     console.log('Successfully added new insert');
+  //   })
+  //   .catch(function(err) {
+  //     console.error(`Failed to add new insert`, err);
+  //     if (knex) {
+  //       knex.destroy();
+  //     }
+  //   });
+});
+
+app.post('/subscribe', function(req, res) {
+  // var data = req.body.others.split('&');
+  // var obj = {};
+  // for (var key in data) {
+  //   obj[data[key].split('=')[0]] = data[key].split('=')[1];
+  // }
+  // knex('withEmail')
+  //   .insert({
+  //     timestamp: new Date(),
+  //     email: req.body.email,
+  //     age: obj.age,
+  //     gender: obj.gender,
+  //     weight_kg: obj.weight,
+  //     height_cm: obj.height,
+  //     goal: obj.goal,
+  //     activity_level: obj.activity
+  //   })
+  //   .then(function() {
+  //     console.log('Successfully added new insert');
+  //     return knex.destroy();
+  //   })
+  //   .catch(function(err) {
+  //     console.error(`Failed to add new insert`, err);
+  //     if (knex) {
+  //       knex.destroy();
+  //     }
+  //   });
 });
 
 app.listen(port);
